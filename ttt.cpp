@@ -48,6 +48,9 @@ int main() {
 }
 
 // Methods //
+/**
+ * Carries out the logistics for a game of Tic Tac Toe.
+ */
 int play_game(int BLANK, int O_MOVE, int X_MOVE, int(*pboard)[3], int *pcounter) {
   int O_TURN = 2;
   int X_TURN = 1;
@@ -138,6 +141,9 @@ int play_game(int BLANK, int O_MOVE, int X_MOVE, int(*pboard)[3], int *pcounter)
   }
 }
 
+/**
+ * Initiates the Tic Tac Toe board.
+ */
 void start(int BLANK, int O_MOVE, int X_MOVE, int(*pboard)[3], int *pcounter) {
   bool looper = true;
   char response = 0;
@@ -158,6 +164,9 @@ void start(int BLANK, int O_MOVE, int X_MOVE, int(*pboard)[3], int *pcounter) {
   }
 }
 
+/**
+ * Checks if a given player has won.
+ */
 bool check_win(int player, int(*pboard)[3]) {
   if (pboard[0][0] == player && pboard[0][1] == player && pboard[0][2] == player) {
     return true;
@@ -187,6 +196,9 @@ bool check_win(int player, int(*pboard)[3]) {
   return false;
 }
 
+/**
+ * Checks if the game has ended in a tie.
+ */
 bool check_tie(int BLANK, int(*pboard)[3]) {
   for (int row = 0; row < 3; row++) {
     for (int column = 0; column < 3; column++) {
@@ -198,6 +210,9 @@ bool check_tie(int BLANK, int(*pboard)[3]) {
   return true;
 }
 
+/**
+ * Resets the Tic Tac Toe board.
+ */
 void reset(int BLANK, int(*pboard)[3]) {
   for (int row = 0; row < 3; row++) {
     for (int column = 0; column < 3; column++) {
@@ -206,6 +221,9 @@ void reset(int BLANK, int(*pboard)[3]) {
   }
 }
 
+/**
+ * Prints out the Tic Tac Toe board.
+ */
 void print(int BLANK, int O_MOVE, int X_MOVE, int(*pboard)[3]) {
   cout << "\t1\t2\t3" << endl;
   for (int row = 0; row < 3; row++) {
